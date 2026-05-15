@@ -1,0 +1,126 @@
+/* font */
+@font-face {
+       font-family: Qualy-Bold;
+       src: url('../assets/Fonts/Qualy-Bold.ttf');
+}
+
+
+/* header */
+header{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 1rem;
+
+       }
+/* responsive for phone*/
+
+@media (min-width:320px) {
+
+   
+       /* MenuIcon */
+              /* Icon */
+       .menuIcon{
+              width: 50px;
+              height: 50px;
+              cursor: pointer;
+       }
+              /* open close */
+       .menu{
+              font-size: 14px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              opacity: 0;
+              transform: translateX(-20px);
+              pointer-events: none;
+              transition: 0.4s ease;
+
+              gap: 10px;
+                     & a{
+                     color:black;
+                     font-family: Qualy-Bold;
+                     text-decoration: none;
+                            &:hover{
+                                   color: orange;
+                            }
+              }
+       }
+       .open{
+              opacity: 1;
+              transform: translateY(0);
+              pointer-events: auto;
+  
+       }
+
+   
+
+}
+
+/* responsive for tablets*/
+
+@media (min-width:481px) {
+
+   
+       /* MenuIcon */
+              /* Icon */
+       .menuIcon{
+              width: 50px;
+              height: 50px;
+              cursor: pointer;
+       }
+              /* open close */
+       .menu{
+              font-size: 20px;
+
+       }
+
+   
+
+}
+
+/* for laptops */
+@media (min-width:769px) {
+
+   
+       /* MenuIcon */
+              /* Icon */
+       .menuIcon{
+              display: none;
+       }
+              /* open close */
+       .menu{
+              font-size: 24px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              opacity: 1;
+              transform: translateX(0);
+              gap: 20px;
+              pointer-events: auto;
+              transition: 0.4s ease;
+              height: 50px;
+                     & a{
+                     color:black;
+                     font-family: Qualy-Bold;
+                     text-decoration: none;
+                            &:hover{
+                                   color: orange;
+                            }
+              }
+       }
+
+   
+
+}
+/* for desktops */
+@media (min-width:1025px) {
+              /* open close */
+       .menu{
+              font-size: 30px;
+              gap: 50px;
+       }
+
+   
+
+}

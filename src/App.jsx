@@ -1,10 +1,11 @@
-import {BorwserRouter, Routes, Route, BrowserRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Header } from './components/Header.jsx';
 import './App.css'
 
 function App() {
 
   return (
-    <BorwserRouter>
+    <BrowserRouter>
       <Header />
 
       <Routes>
@@ -16,7 +17,7 @@ function App() {
 
 
 
-    </BorwserRouter>
+    </BrowserRouter>
   );
 }
 
