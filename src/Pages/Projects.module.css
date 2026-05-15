@@ -1,0 +1,345 @@
+@font-face {
+       font-family: Montserrat-Regular;
+       src: url('../assets/Fonts/Montserrat-Regular.ttf');
+}
+
+
+
+/* Projects.module.css */
+.section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+  top: 15%;
+  right: -250px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(218, 112, 214, 0.08) 0%, transparent 70%);
+  bottom: 10%;
+  left: -200px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: pulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: monospace;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 20px rgba(138, 43, 226, 0.3);
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, #8a2be2, #da70d6);
+  margin: 24px auto 0;
+  border-radius: 3px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.5);
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #b8b8d0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectCard:hover {
+  border-color: rgba(138, 43, 226, 0.5);
+  box-shadow: 0 25px 60px rgba(138, 43, 226, 0.4);
+  transform: translateY(-8px);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.15);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.projectCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.overlayButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #8a2be2, #da70d6);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-family: fantasy;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(138, 43, 226, 0.5);
+  transition: all 0.3s ease;
+}
+
+.overlayButton:hover {
+  box-shadow: 0 15px 35px rgba(138, 43, 226, 0.7);
+}
+
+.buttonIcon {
+  font-size: 1.3rem;
+}
+
+.projectLogo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectLogo {
+  transform: rotate(360deg) scale(1.1);
+  border-color: rgba(138, 43, 226, 0.8);
+}
+
+.projectContent {
+  padding: 32px;
+}
+
+.projectTitle {
+  font-size: 1.65rem;
+  font-weight: 700;
+  font-family: Montserrat-Regular;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.projectDescription {
+  font-size: 1.1rem;
+  color: wheat;
+  font-family: Montserrat-Regular;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tag {
+  padding: 8px 16px;
+  background: rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.35);
+  border-radius: 25px;
+  font-size: 1rem;
+  color: turquoise;
+  font-family: fantasy;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(138, 43, 226, 0.25);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-2px);
+}
+
+.projectFooter {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #a78bfa;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.githubLink:hover {
+  color: #da70d6;
+  gap: 14px;
+}
+
+.linkIcon {
+  font-size: 1.3rem;
+}
+
+.externalIcon {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 16px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .imageContainer {
+    height: 220px;
+  }
+
+  .projectLogo {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  .projectContent {
+    padding: 24px;
+  }
+
+  .projectTitle {
+    font-size: 1.4rem;
+  }
+
+  .projectDescription {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .overlayButton {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.1rem;
+  }
+}
