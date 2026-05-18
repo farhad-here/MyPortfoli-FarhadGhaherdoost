@@ -51,7 +51,7 @@ npm run dev
 
 ## Project Structure
 
-
+```
 MyPortfoli-FarhadGhaherdoost/
 ├── public/              # Static assets
 ├── src/
@@ -63,7 +63,7 @@ MyPortfoli-FarhadGhaherdoost/
 ├── index.html          # HTML template
 ├── package.json        # Project dependencies
 └── vite.config.js      # Vite configuration
-
+```
 ## Deployment
 
 ### Build for Production
